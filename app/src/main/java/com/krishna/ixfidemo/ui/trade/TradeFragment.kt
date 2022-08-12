@@ -1,0 +1,36 @@
+package com.krishna.ixfidemo.ui.trade
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.TextView
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
+import com.krishna.ixfidemo.databinding.FragmentTradeBinding
+import dagger.hilt.android.AndroidEntryPoint
+
+@AndroidEntryPoint
+class TradeFragment : Fragment() {
+
+    private var _binding: FragmentTradeBinding? = null
+
+    // This property is only valid between onCreateView and
+    // onDestroyView.
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding = FragmentTradeBinding.inflate(inflater, container, false)
+        val root: View = binding.root
+        return root
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
